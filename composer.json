@@ -1,0 +1,34 @@
+{
+    "name": "kovey/app",
+    "type": "library",
+    "description": "Container Of The Kovey Framework",
+    "keywords": [
+        "framework",
+        "kovey",
+        "app",
+        "php"
+    ],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Kovey",
+            "email": "kovey@vip.qq.com",
+            "role": "developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "kovey/container": "^1.0",
+        "kovey/connection": "^1.0",
+        "kovey/event": "^1.0",
+        "kovey/process": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kovey\\App\\": "src/"
+        }
+    }
+}
