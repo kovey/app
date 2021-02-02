@@ -19,8 +19,8 @@
     "require": {
         "php": "^8.0",
         "kovey/container": "^1.0",
-        "kovey/connection": "^1.0",
-        "kovey/event": "^1.0",
+        "kovey/connection": "^1.1.1",
+        "kovey/event": "^1.0.2",
         "kovey/process": "^1.0"
     },
     "require-dev": {
