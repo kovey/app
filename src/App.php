@@ -138,7 +138,7 @@ abstract class App implements AppInterface
      *
      * @return Application
      */
-    public function registerContainer(ContainerInterface $container) : Application
+    public function registerContainer(ContainerInterface $container) : App
     {
         $this->container = $container;
         $this->work->setContainer($container);
