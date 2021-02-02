@@ -1,7 +1,7 @@
-## Container Of Kovey Framework
+## App Of Kovey Framework
 #### Description
-###### Library
+###### App
 ###### Usage:
-    - composer require kovey/container
+    - composer require kovey/app
 ###### Run All Test:
     - php /path/to/tests/test.php --bootstrap=/path/to/vendor/autoload.php /path/to/tests
