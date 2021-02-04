@@ -333,6 +333,22 @@ abstract class App implements AppInterface
     }
 
     /**
+     * @description console event
+     *
+     * @param Console $event
+     *
+     * @return void
+     */
+    public function console(Event\Console $event) : void
+    {
+        try {
+            $this->event->dispatch($event);
+        } catch (\Throwable $e) {
+            Logger::writeExceptionLog(__LINE__, __FILE__, $e, $event->getTraceId());
+        }
+    }
+
+    /**
      * @description check config
      *
      * @return Application
