@@ -13,6 +13,7 @@ namespace Kovey\App;
 
 use Kovey\Connection\AppInterface;
 use Kovey\Connection\Pools;
+use Kovey\Connection\Pool\PoolInterface;
 use Kovey\Container\ContainerInterface;
 use Kovey\Process\UserProcess;
 use Kovey\Event\EventManager;
