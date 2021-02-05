@@ -35,6 +35,7 @@ abstract class ServerAbstract implements ServerInterface
         ));
 
         $this->initServer();
+
         $this->serv->on('workerStart', array($this, 'workerStart'));
         $this->serv->on('managerStart', array($this, 'managerStart'));
         $this->serv->on('pipeMessage', array($this, 'pipeMessage'));
@@ -59,6 +60,10 @@ abstract class ServerAbstract implements ServerInterface
 
     public function monitor(Array $data, string $traceId) : void
     {
+        if (isset($this->config['monitor_open']) && $this->config['monitor_open'] === 'Off') {
+            return;
+        }
+
         try {
             $this->event->dispatch(new Event\Monitor($data));
         } catch (\Throwable $e) {
