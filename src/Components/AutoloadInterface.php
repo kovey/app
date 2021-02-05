@@ -9,7 +9,7 @@
  * @time 2021-02-02 13:15:12
  *
  */
-namespace KoveyException\App\Components;
+namespace Kovey\App\Components;
 
 interface AutoloadInterface
 {
