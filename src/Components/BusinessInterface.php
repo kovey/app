@@ -11,11 +11,13 @@
  */
 namespace Kovey\App\Components;
 
+use Kovey\Event\EventManager;
+
 interface BusinessInterface
 {
     public function begin() : BusinessInterface;
 
-    public function run() : BusinessInterface;
+    public function run(EventManager $eventManager) : BusinessInterface;
 
     public function end() : BusinessInterface;
 
