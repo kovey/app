@@ -15,6 +15,7 @@ use Kovey\Event\EventManager;
 use Swoole\Server;
 use Kovey\Logger\Logger;
 use Swoole\Server\PipeMessage;
+use Kovey\App\Event;
 
 abstract class ServerAbstract implements ServerInterface
 {
