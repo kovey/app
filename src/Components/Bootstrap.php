@@ -11,6 +11,8 @@
  */
 namespace Kovey\App\Components;
 
+use Kovey\App\App;
+
 class Bootstrap
 {
     private Array $boots;
@@ -30,7 +32,7 @@ class Bootstrap
         return $this;
     }
 
-    public function run(Application $app)
+    public function run(App $app)
     {
         foreach ($this->boots as $bootstrap) {
             $funs = get_class_methods($bootstrap);
