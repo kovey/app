@@ -25,14 +25,20 @@ abstract class ServerAbstract implements ServerInterface
 
     protected Server $serv;
 
+    protected bool $isRunDocker;
+
     final public function __construct(Array $config)
     {
         $this->config = $config;
+        $this->isRunDocker = ($this->config['run_docker'] ?? 'Off') === 'On';
+
         $this->event = new EventManager(array(
             'monitor' => Event\Monitor::class,
             'console' => Event\Console::class,
             'initPool' => Event\InitPool::class
         ));
+
+        $this->initLog();
 
         $this->initServer();
 
@@ -40,6 +46,18 @@ abstract class ServerAbstract implements ServerInterface
         $this->serv->on('managerStart', array($this, 'managerStart'));
         $this->serv->on('pipeMessage', array($this, 'pipeMessage'));
         $this->serv->on('workerError', array($this, 'workerError'));
+    }
+
+    private function initLog()
+    {
+        $logDir = dirname($this->config['pid_file']);
+        if (!is_dir($logDir)) {
+            mkdir($logDir, 0777, true);
+        }
+
+        if (!is_dir($this->config['logger_dir'] . '/server')) {
+            mkdir($this->config['logger_dir'] . '/server');
+        }
     }
 
     public function on(string $type, callable | Array $callback) : ServerInterface
@@ -124,6 +142,23 @@ abstract class ServerAbstract implements ServerInterface
     public function pipeMessage(\Swoole\Server $serv, PipeMessage $message) : void
     {
         $this->console($message->data);
+    }
+
+    /**
+     * @description get ip
+     *
+     * @param int $fd
+     *
+     * @return string
+     */
+    public function getClientIP(int $fd) : string
+    {
+        $info = $this->serv->getClientInfo($fd);
+        if (empty($info)) {
+            return '';
+        }
+
+        return $info['remote_ip'] ?? '';
     }
 
     abstract protected function initServer();
