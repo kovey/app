@@ -95,6 +95,7 @@ abstract class App implements AppInterface
 
         $this->initBootstrap()
              ->init()
+             ->initProcess()
              ->initWork();
     }
 
@@ -103,10 +104,15 @@ abstract class App implements AppInterface
         $this->bootstrap
              ->add(new AB\BaseInit())
              ->add(new AB\ContainerEventInit())
-             ->add(new AB\ProcessInit())
              ->add(new AB\MonitorInit())
              ->add(new AB\PoolInit());
 
+        return $this;
+    }
+
+    private function initProcess() : App
+    {
+        $this->bootstrap->add(new AB\ProcessInit());
         return $this;
     }
 
