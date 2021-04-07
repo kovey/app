@@ -25,6 +25,7 @@ use Kovey\App\Components\ServerInterface;
 use Kovey\App\Components\AutoloadInterface;
 use Kovey\Logger\Monitor;
 use Kovey\App\Event;
+use Kovey\App\Bootstrap as AB;
 
 abstract class App implements AppInterface
 {
@@ -91,8 +92,22 @@ abstract class App implements AppInterface
             'console' => Event\Console::class,
             'initPool' => Event\InitPool::class
         ));
-        $this->init()
+
+        $this->initBootstrap()
+             ->init()
              ->initWork();
+    }
+
+    private function initBootstrap() : App
+    {
+        $this->bootstrap
+             ->add(new AB\BaseInit())
+             ->add(new AB\ContainerEventInit())
+             ->add(new AB\ProcessInit())
+             ->add(new AB\MonitorInit())
+             ->add(new AB\PoolInit());
+
+        return $this;
     }
 
     /**
