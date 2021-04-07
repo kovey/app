@@ -9,7 +9,7 @@
  * @time 2021-04-07 13:29:05
  *
  */
-namespace Kovey\Web\App\Bootstrap;
+namespace Kovey\App\Bootstrap;
 
 use Kovey\Library\Config\Manager;
 use Kovey\App\App;
