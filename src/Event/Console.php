@@ -23,12 +23,15 @@ class Console implements EventInterface
 
     private string $traceId;
 
-    public function __construct(string $path, string $method, Array $args, string $traceId)
+    private string $spanId;
+
+    public function __construct(string $path, string $method, Array $args, string $traceId, string $spanId)
     {
         $this->path = $path;
         $this->method = $method;
         $this->args = $args;
         $this->traceId = $traceId;
+        $this->spanId = $spanId;
     }
 
     /**
@@ -69,5 +72,10 @@ class Console implements EventInterface
     public function getTraceId() : string
     {
         return $this->traceId;
+    }
+
+    public function getSpanId() : string
+    {
+        return $this->spanId;
     }
 }

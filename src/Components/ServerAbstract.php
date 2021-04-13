@@ -101,7 +101,7 @@ abstract class ServerAbstract implements ServerInterface
     protected function console(Array $data) : void
     {
         try {
-            $this->event->dispatch(new Event\Console($data['p'] ?? '', $data['m'] ?? '', $data['a'] ?? '', $data['t'] ?? ''));
+            $this->event->dispatch(new Event\Console($data['p'] ?? '', $data['m'] ?? '', $data['a'] ?? '', $data['t'] ?? '', $data['s'] ?? ''));
         } catch (\Throwable $e) {
             Logger::writeExceptionLog(__LINE__, __FILE__, $e, $data['t'] ?? '');
         }
