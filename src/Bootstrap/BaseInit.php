@@ -16,6 +16,7 @@ use Kovey\App\App;
 use Kovey\Logger\Logger;
 use Kovey\Logger\Db;
 use Kovey\Logger\Monitor;
+use Kovey\Logger\Redis;
 use Kovey\Process\UserProcess;
 use Kovey\Container\Container;
 
@@ -35,6 +36,7 @@ class BaseInit
         Logger::setCategory(Manager::get('server.server.name'));
         Monitor::setLogDir(Manager::get('server.server.logger_dir'));
         Db::setLogDir(Manager::get('server.server.logger_dir'));
+        Redis::setLogDir(Manager::get('server.server.logger_dir'));
     }
 
     /**

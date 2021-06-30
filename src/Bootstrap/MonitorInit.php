@@ -26,10 +26,15 @@ class MonitorInit
         }
 
         $app->on('monitor', function (Event\Monitor $event) {
-                $monitor = new Monitor(Manager::get('rpc.monitor'), Manager::get('server.server.project'), Manager::get('server.server.name'));
-                if (!$monitor->sendToMonitor($event->getData())) {
-                    Logger::writeWarningLog(__LINE__, __FILE__, $monitor->getError());
-                }
-            });
+            $code = $event->getData()['http_code'] ?? 200;
+            if ($code == 404 || $code == 405) {
+                return;
+            }
+
+            $monitor = new Monitor(Manager::get('rpc.monitor'), Manager::get('server.server.project'), Manager::get('server.server.name'));
+            if (!$monitor->sendToMonitor($event->getData())) {
+                Logger::writeWarningLog(__LINE__, __FILE__, $monitor->getError());
+            }
+        });
     }
 }
