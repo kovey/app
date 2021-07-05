@@ -15,7 +15,7 @@ use Kovey\Library\Config\Manager;
 use Kovey\App\App;
 use Kovey\Container\Event;
 use Kovey\Connection\Pool;
-use Kovey\Container\EventName;
+use Kovey\Container\Keyword\EventName;
 use Kovey\Sharding\Mysql;
 use Kovey\Sharding\Redis;
 use Kovey\Sharding\Sharding\GlobalIdentify;
