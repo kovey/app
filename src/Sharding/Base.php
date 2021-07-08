@@ -9,7 +9,7 @@
  * @time 2021-07-03 15:50:33
  *
  */
-namespace Kovey\App\Model;
+namespace Kovey\App\Sharding;
 
 use Kovey\Container\Module\HasDbInterface;
 use Kovey\Sharding\DbInterface;
