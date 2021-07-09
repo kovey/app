@@ -51,7 +51,8 @@ class ContainerEventInit
             return;
         }
 
-        $app->on(EventName::EVENT_DATABASE, function (Event\Database $event) use ($app) {
+        $app->getContainer()
+            ->on(EventName::EVENT_DATABASE, function (Event\Database $event) use ($app) {
                 return new Pool($app->getPool($event->getPoolName()));
             })
             ->on(EventName::EVENT_SHARDING_DATABASE, function (Event\ShardingDatabase $event) use ($app) {
@@ -63,7 +64,8 @@ class ContainerEventInit
 
     public function __initGlobal(App $app) : void 
     {
-        $app->on(EventName::EVENT_GLOBAL_ID, function (Event\GlobalId $event) use ($app) {
+        $app->getContainer()
+            ->on(EventName::EVENT_GLOBAL_ID, function (Event\GlobalId $event) use ($app) {
             $pool = new Pool($app->getPool($event->getRedisPoolName())); 
             try {
                 $gl = new GlobalIdentify($pool->getConnection(), $event->getGlobalKey());
