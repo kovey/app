@@ -17,10 +17,11 @@ use Kovey\Connection\Pool;
 use Kovey\Sharding\DbInterface;
 use Kovey\Sharding\RedisInterface;
 use Kovey\Library\Exception\BusiException;
+use Kovey\App\Components\ClickhouseInterface;
 
 abstract class Base implements HasGlobalIdInterface, HasRedisInterface, HasDbInterface
 {
-    protected Pool | DbInterface $database;
+    protected Pool | DbInterface | ClickhouseInterface $database;
 
     protected Pool | RedisInterface $redis;
 
