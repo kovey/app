@@ -62,24 +62,26 @@
         },
         {
             "name": "kovey/container",
-            "version": "v2.0.9",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kovey/container.git",
-                "reference": "d0afc62c496dfdfad83bce814f833285de140364"
+                "reference": "54d182c20f6da9b310ada6bf9c5e660fb4f7f32e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kovey/container/zipball/d0afc62c496dfdfad83bce814f833285de140364",
-                "reference": "d0afc62c496dfdfad83bce814f833285de140364",
+                "url": "https://api.github.com/repos/kovey/container/zipball/54d182c20f6da9b310ada6bf9c5e660fb4f7f32e",
+                "reference": "54d182c20f6da9b310ada6bf9c5e660fb4f7f32e",
                 "shasum": ""
             },
             "require": {
                 "kovey/event": "^1.0",
+                "kovey/library": "^2.0",
                 "kovey/validator": "^1.0",
                 "php": "^8.0"
             },
             "require-dev": {
+                "phpstan/phpstan": "^1.2",
                 "phpunit/phpunit": "^9.3"
             },
             "type": "library",
@@ -108,9 +110,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kovey/container/issues",
-                "source": "https://github.com/kovey/container/tree/v2.0.9"
+                "source": "https://github.com/kovey/container/tree/v2.1.0"
             },
-            "time": "2021-10-16T05:37:42+00:00"
+            "time": "2021-11-25T12:09:55+00:00"
         },
         {
             "name": "kovey/db",
