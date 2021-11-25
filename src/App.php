@@ -26,6 +26,8 @@ use Kovey\App\Components\AutoloadInterface;
 use Kovey\Logger\Monitor;
 use Kovey\App\Event;
 use Kovey\App\Bootstrap as AB;
+use Kovey\Library\Exception\KoveyException;
+use Kovey\Logger\Logger;
 
 abstract class App implements AppInterface
 {

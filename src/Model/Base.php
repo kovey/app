@@ -17,8 +17,6 @@ use Kovey\Db\Model\Base as MB;
 
 abstract class Base extends MB implements HasDbInterface
 {
-    protected Pool $database;
-
     public function setDatabase(mixed $database) : Base
     {
         $this->database = $database;

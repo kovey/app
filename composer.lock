@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "kovey/connection",
-            "version": "v1.1.9",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kovey/connection.git",
-                "reference": "cf3014a84fb32869a1e4c24ea52dc06e8247dfe9"
+                "reference": "3fffd14b33d5562a66776088d83eac083878138e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kovey/connection/zipball/cf3014a84fb32869a1e4c24ea52dc06e8247dfe9",
-                "reference": "cf3014a84fb32869a1e4c24ea52dc06e8247dfe9",
+                "url": "https://api.github.com/repos/kovey/connection/zipball/3fffd14b33d5562a66776088d83eac083878138e",
+                "reference": "3fffd14b33d5562a66776088d83eac083878138e",
                 "shasum": ""
             },
             "require": {
@@ -26,6 +26,7 @@
                 "php": "^8.0"
             },
             "require-dev": {
+                "phpstan/phpstan": "^1.2",
                 "phpunit/phpunit": "^9.3"
             },
             "type": "library",
@@ -55,9 +56,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kovey/connection/issues",
-                "source": "https://github.com/kovey/connection/tree/v1.1.9"
+                "source": "https://github.com/kovey/connection/tree/v1.2.0"
             },
-            "time": "2021-07-23T02:28:51+00:00"
+            "time": "2021-11-25T11:45:30+00:00"
         },
         {
             "name": "kovey/container",
@@ -113,23 +114,25 @@
         },
         {
             "name": "kovey/db",
-            "version": "v1.1.6",
+            "version": "v1.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kovey/db.git",
-                "reference": "67947ac4a7021e28c054afe431775cb3d87abcf1"
+                "reference": "0a53a59486f6865d2956b50c63de93a80bbb2e53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kovey/db/zipball/67947ac4a7021e28c054afe431775cb3d87abcf1",
-                "reference": "67947ac4a7021e28c054afe431775cb3d87abcf1",
+                "url": "https://api.github.com/repos/kovey/db/zipball/0a53a59486f6865d2956b50c63de93a80bbb2e53",
+                "reference": "0a53a59486f6865d2956b50c63de93a80bbb2e53",
                 "shasum": ""
             },
             "require": {
+                "kovey/library": "^2.0",
                 "kovey/logger": "^1.0 | ^2.0",
                 "php": "^8.0"
             },
             "require-dev": {
+                "phpstan/phpstan": "^1.2",
                 "phpunit/phpunit": "^9.3"
             },
             "type": "library",
@@ -158,9 +161,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kovey/db/issues",
-                "source": "https://github.com/kovey/db/tree/v1.1.6"
+                "source": "https://github.com/kovey/db/tree/v1.1.7"
             },
-            "time": "2021-07-05T06:27:20+00:00"
+            "time": "2021-11-25T11:34:23+00:00"
         },
         {
             "name": "kovey/event",
@@ -373,25 +376,27 @@
         },
         {
             "name": "kovey/redis",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kovey/redis.git",
-                "reference": "c1463a8a35cbaba267ec40be1f368ec6df985e71"
+                "reference": "bf01c3b8f97b1b2a0838093bf2a9d2fdd0fc7b06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kovey/redis/zipball/c1463a8a35cbaba267ec40be1f368ec6df985e71",
-                "reference": "c1463a8a35cbaba267ec40be1f368ec6df985e71",
+                "url": "https://api.github.com/repos/kovey/redis/zipball/bf01c3b8f97b1b2a0838093bf2a9d2fdd0fc7b06",
+                "reference": "bf01c3b8f97b1b2a0838093bf2a9d2fdd0fc7b06",
                 "shasum": ""
             },
             "require": {
                 "ext-redis": ">=5.3",
+                "kovey/library": " ^2.0",
                 "kovey/logger": "^1.0 | ^2.0",
                 "php": ">=8.0"
             },
             "require-dev": {
                 "ext-swoole": ">=4.5.5",
+                "phpstan/phpstan": "^1.2",
                 "phpunit/phpunit": "^9.3"
             },
             "type": "library",
@@ -420,22 +425,22 @@
             ],
             "support": {
                 "issues": "https://github.com/kovey/redis/issues",
-                "source": "https://github.com/kovey/redis/tree/v1.0.2"
+                "source": "https://github.com/kovey/redis/tree/v1.0.3"
             },
-            "time": "2021-06-30T08:24:56+00:00"
+            "time": "2021-11-25T11:40:30+00:00"
         },
         {
             "name": "kovey/rpc-client",
-            "version": "v2.0.8",
+            "version": "v2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kovey/rpc-client.git",
-                "reference": "57be8f3d22b9b1f92afaedb0c36a586bd49dcd15"
+                "reference": "e006550d2c375811a12086fcb12ac2015ec01f95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kovey/rpc-client/zipball/57be8f3d22b9b1f92afaedb0c36a586bd49dcd15",
-                "reference": "57be8f3d22b9b1f92afaedb0c36a586bd49dcd15",
+                "url": "https://api.github.com/repos/kovey/rpc-client/zipball/e006550d2c375811a12086fcb12ac2015ec01f95",
+                "reference": "e006550d2c375811a12086fcb12ac2015ec01f95",
                 "shasum": ""
             },
             "require": {
@@ -445,6 +450,7 @@
                 "php": "^8.0"
             },
             "require-dev": {
+                "phpstan/phpstan": "^1.2",
                 "phpunit/phpunit": "^9.3"
             },
             "type": "library",
@@ -474,29 +480,31 @@
             ],
             "support": {
                 "issues": "https://github.com/kovey/rpc-client/issues",
-                "source": "https://github.com/kovey/rpc-client/tree/v2.0.8"
+                "source": "https://github.com/kovey/rpc-client/tree/v2.0.9"
             },
-            "time": "2021-11-24T08:45:07+00:00"
+            "time": "2021-11-25T10:58:04+00:00"
         },
         {
             "name": "kovey/sharding",
-            "version": "v1.1.4",
+            "version": "v1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kovey/sharding.git",
-                "reference": "065ff1d2b195c2afdc9b639d4207724f1e37bf19"
+                "reference": "40cbfcc45aaa34417dd159572adbc179c06892a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kovey/sharding/zipball/065ff1d2b195c2afdc9b639d4207724f1e37bf19",
-                "reference": "065ff1d2b195c2afdc9b639d4207724f1e37bf19",
+                "url": "https://api.github.com/repos/kovey/sharding/zipball/40cbfcc45aaa34417dd159572adbc179c06892a2",
+                "reference": "40cbfcc45aaa34417dd159572adbc179c06892a2",
                 "shasum": ""
             },
             "require": {
                 "kovey/connection": "^1.1",
+                "kovey/library": "^2.0",
                 "php": "^8.0"
             },
             "require-dev": {
+                "phpstan/phpstan": "^1.2",
                 "phpunit/phpunit": "^9.3"
             },
             "type": "library",
@@ -526,9 +534,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kovey/sharding/issues",
-                "source": "https://github.com/kovey/sharding/tree/v1.1.4"
+                "source": "https://github.com/kovey/sharding/tree/v1.1.5"
             },
-            "time": "2021-07-08T10:16:18+00:00"
+            "time": "2021-11-25T11:49:32+00:00"
         },
         {
             "name": "kovey/validator",

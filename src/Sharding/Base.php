@@ -17,8 +17,6 @@ use Kovey\Sharding\Model\Base as MB;
 
 abstract class Base extends MB implements HasDbInterface
 {
-    protected DbInterface $database;
-
     public function setDatabase(mixed $database) : Base
     {
         $this->database = $database;
