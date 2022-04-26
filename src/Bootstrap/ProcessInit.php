@@ -41,9 +41,8 @@ class ProcessInit
             return;
         }
 
-        $dir = empty($config['clean_path']) ? '/home/logs/' . Manager::get('server.server.name') : $config['clean_path'];
         $clean = new Process\CleanLog();
-        $clean->setPath($dir);
+        $clean->setPath(Manager::get('server.server.logger_dir'));
         $app->registerProcess('kovey_clean_log', $clean);
     }
 }
