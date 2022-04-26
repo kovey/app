@@ -33,4 +33,17 @@ class ProcessInit
 
         $app->registerProcess('kovey_monitor', new Process\Monitor());
     }
+
+    public function __initCleanLogs(App $app) : void
+    {
+        $config = Manager::get('server.monitor');
+        if (!empty($config['clean']) && $config['clean'] == 'Off') {
+            return;
+        }
+
+        $dir = empty($config['clean_path']) ? '/home/logs/' . Manager::get('server.server.name') : $config['clean_path'];
+        $clean = new Process\CleanLog();
+        $clean->setPath($dir);
+        $app->registerProcess('kovey_clean_log', $clean);
+    }
 }
