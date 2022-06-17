@@ -22,4 +22,6 @@ interface WorkInterface
     public function run(EventInterface $event) : Array;
 
     public function setEventManager(EventManager $eventManager) : WorkInterface;
+
+    public function setLocker(Locker $locker) : WorkInterface;
 }

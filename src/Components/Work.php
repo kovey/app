@@ -21,6 +21,8 @@ abstract class Work implements WorkInterface
 
     protected ContainerInterface $container;
 
+    protected Locker $locker;
+
     public function setContainer(ContainerInterface $container) : WorkInterface
     {
         $this->container = $container;
@@ -30,6 +32,12 @@ abstract class Work implements WorkInterface
     public function setEventManager(EventManager $eventManager) : WorkInterface
     {
         $this->event = $eventManager;
+        return $this;
+    }
+
+    public function setLocker(Locker $locker) : WorkInterface
+    {
+        $this->locker = $locker;
         return $this;
     }
 }

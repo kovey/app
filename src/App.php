@@ -28,6 +28,7 @@ use Kovey\App\Event;
 use Kovey\App\Bootstrap as AB;
 use Kovey\Library\Exception\KoveyException;
 use Kovey\Logger\Logger;
+use Kovey\App\Components\Locker;
 
 abstract class App implements AppInterface
 {
@@ -76,6 +77,8 @@ abstract class App implements AppInterface
 
     protected Pools $pools;
 
+    protected Locker $locker;
+
     /**
      * @description constructor
      *
@@ -94,6 +97,7 @@ abstract class App implements AppInterface
             'console' => Event\Console::class,
             'initPool' => Event\InitPool::class
         ));
+        $this->locker = new Locker();
 
         $this->initBootstrap()
              ->init()
